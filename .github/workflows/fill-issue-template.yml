@@ -4,6 +4,10 @@ on:
   issues:
     types: [opened]    # Issue（Draft Issue 含む）が作成された瞬間
 
+permissions:
+  issues: write
+  contents: read   # 他に必要な権限があれば追記
+
 jobs:
   apply-template:
     runs-on: ubuntu-latest
