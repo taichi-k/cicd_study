@@ -1,0 +1,32 @@
+name: Fill issue template
+
+on:
+  issues:
+    types: [opened]    # Issue（Draft Issue 含む）が作成された瞬間
+
+jobs:
+  apply-template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Insert default template
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            // 作成された Issue 番号を取得
+            const issueNumber = context.payload.issue.number;
+            // 挿入する本文テンプレート
+            const template = [
+              "### 目的",
+              "- a",
+              "",
+              "### タスク",
+              "- b"
+            ].join("\n");
+            // REST API で本文を置き換え
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issue_number: issueNumber,
+              body: template
+            });
