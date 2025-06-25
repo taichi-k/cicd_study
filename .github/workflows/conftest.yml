@@ -1,4 +1,5 @@
-pull_request
+name: Conftest
+on: pull_request
 jobs:
   test:
     runs-on: ubuntu-latest
