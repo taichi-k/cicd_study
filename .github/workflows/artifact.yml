@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [upload]                        # uploadジョブの実行を待つ
     steps:
-      - uses: actions/download-artifact@v4 # アーティファクトのダウンロード
+      - uses: actions/download-artifact@v5 # アーティファクトのダウンロード
         with:
           name: uploaded                   # アーティファクト名
           path: downloaded                 # ダウンロード先のパス
