@@ -22,7 +22,7 @@ jobs:            # Reusable Workflowsのジョブ定義
       contents: read
       pull-requests: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - id: pr-comment
         run: |
           body="Welcome, ${GITHUB_ACTOR}"
