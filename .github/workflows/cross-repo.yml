@@ -12,7 +12,7 @@ jobs:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
           repositories: ${{ env.TARGET_REPO }}
-      - uses: actions/checkout@v4                  # 別リポジトリのチェックアウト
+      - uses: actions/checkout@v5                  # 別リポジトリのチェックアウト
         with:
           repository: ${{ github.repository_owner }}/${{ env.TARGET_REPO }}
           path: ${{ env.TARGET_REPO }}

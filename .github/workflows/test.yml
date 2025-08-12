@@ -6,7 +6,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4      # ステップ1: チェックアウト
+      - uses: actions/checkout@v5      # ステップ1: チェックアウト
       - uses: actions/setup-go@v5      # ステップ2: 言語セットアップ
         with:
           go-version-file: .go-version
