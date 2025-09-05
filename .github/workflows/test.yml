@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4      # ステップ1: チェックアウト
-      - uses: actions/setup-go@v5      # ステップ2: 言語セットアップ
+      - uses: actions/setup-go@v6      # ステップ2: 言語セットアップ
         with:
           go-version-file: .go-version
       - run: go test go/excellent/*.go # ステップ3: テストの実行
